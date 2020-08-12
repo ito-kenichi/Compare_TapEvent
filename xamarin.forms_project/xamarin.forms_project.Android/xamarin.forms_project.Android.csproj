@@ -85,13 +85,24 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\drawable\" />
+    <Folder Include="Resources\drowable\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\xamarin.forms_project\xamarin.forms_project.csproj">
       <Project>{45B8711D-773C-4B1C-977A-89301C805B2A}</Project>
       <Name>xamarin.forms_project</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\xamarin.forms_project\images\image001.jpg">
+      <Link>Resources\drowable\images\image001.jpg</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\xamarin.forms_project\images\image002.jpg">
+      <Link>Resources\drowable\images\image002.jpg</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\xamarin.forms_project\images\image003.jpg">
+      <Link>Resources\drowable\images\image003.jpg</Link>
+    </EmbeddedResource>
   </ItemGroup>
  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
