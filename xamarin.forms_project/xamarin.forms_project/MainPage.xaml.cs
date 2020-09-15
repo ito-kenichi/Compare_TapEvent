@@ -5,34 +5,20 @@ namespace xamarin.forms_project
 {
     public partial class MainPage : ContentPage
     {
+        int index = 1;
         public MainPage()
         {
             InitializeComponent();
-
-            int index = 1;
-
-            var image = new Image()
+            image.Source = ImageSource.FromResource("xamarin.forms_project.images.image" + String.Format("{0:D3}", index) + ".jpg");
+        }
+        void OnTapGestureRecognizerTapped(object sender, EventArgs args)
+        {
+            index++;
+            if (index == 4)
             {
-                Source = ImageSource.FromResource("xamarin.forms_project.images.image" + String.Format("{0:D3}", index) + ".jpg"),
-                HorizontalOptions = LayoutOptions.Center,
-                VerticalOptions = LayoutOptions.Center,
-                WidthRequest = 200,
-                HeightRequest = 100,
-            };
-
-            var tapGestureRecognizer = new TapGestureRecognizer();
-            tapGestureRecognizer.Tapped += (sender, e) =>
-            {
-                index++;
-                if (index == 4)
-                {
-                    index = 1;
-                }
-                image.Source = ImageSource.FromResource("xamarin.forms_project.images.image" + String.Format("{0:D3}", index) + ".jpg");
-            };
-            image.GestureRecognizers.Add(tapGestureRecognizer);
-
-            Layout.Children.Add(image);
+                index = 1;
+            }
+            image.Source = ImageSource.FromResource("xamarin.forms_project.images.image" + String.Format("{0:D3}", index) + ".jpg");
         }
     }
 }
